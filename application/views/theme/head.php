@@ -5,14 +5,14 @@
     <title>Scale | Web Application</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="assets/css/app.v1.css" type="text/css" />
-    <link rel="stylesheet" href="assets/js/calendar/bootstrap_calendar.css" type="text/css" />
-    <!--[if lt IE 9]> <script src="assets/js/ie/html5shiv.js"></script> <script src="assets/js/ie/respond.min.js"></script> <script src="assets/js/ie/excanvas.js"></script> <![endif]-->
+    <link rel="stylesheet" href="<?=config_item('base_url');?>/assets/css/app.v1.css" type="text/css" />
+    <link rel="stylesheet" href="<?=config_item('base_url');?>/assets/js/calendar/bootstrap_calendar.css" type="text/css" />
+    <!--[if lt IE 9]> <script src="<?=config_item('base_url');?>/assets/js/ie/html5shiv.js"></script> <script src="<?=config_item('base_url');?>/assets/js/ie/respond.min.js"></script> <script src="<?=config_item('base_url');?>/assets/js/ie/excanvas.js"></script> <![endif]-->
 </head>
 <body class="">
     <section class="vbox">
         <header class="bg-primary header header-md navbar navbar-fixed-top-xs box-shadow">
-            <div class="navbar-header aside-md dk"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav"> <i class="fa fa-bars"></i> </a> <a href="index.html" class="navbar-brand"><img src="assets/images/logo.png" class="m-r-sm">Scale</a> <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user"> <i class="fa fa-cog"></i> </a> </div>
+            <div class="navbar-header aside-md dk"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav"> <i class="fa fa-bars"></i> </a> <a href="index.html" class="navbar-brand"><img src="<?=config_item('base_url');?>/assets/images/logo.png" class="m-r-sm">Scale</a> <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user"> <i class="fa fa-cog"></i> </a> </div>
             <ul class="nav navbar-nav hidden-xs">
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="i i-grid"></i> </a>
                     <section class="dropdown-menu aside-lg bg-white on animated fadeInLeft">
@@ -53,14 +53,14 @@
                     <section class="dropdown-menu aside-xl animated flipInY">
                         <section class="panel bg-white">
                             <header class="panel-heading b-light bg-light"> <strong>You have <span class="count">2</span> notifications</strong> </header>
-                            <div class="list-group list-group-alt"> <a href="#" class="media list-group-item"> <span class="pull-left thumb-sm"> <img src="assets/images/a0.jpg" alt="John said" class="img-circle"> </span> <span class="media-body block m-b-none"> Use awesome animate.css<br>
+                            <div class="list-group list-group-alt"> <a href="#" class="media list-group-item"> <span class="pull-left thumb-sm"> <img src="<?=config_item('base_url');?>/assets/images/a0.jpg" alt="John said" class="img-circle"> </span> <span class="media-body block m-b-none"> Use awesome animate.css<br>
                                 <small class="text-muted">10 minutes ago</small> </span> </a> <a href="#" class="media list-group-item"> <span class="media-body block m-b-none"> 1.0 initial released<br>
                                 <small class="text-muted">1 hour ago</small> </span> </a> </div>
                             <footer class="panel-footer text-sm"> <a href="#" class="pull-right"><i class="fa fa-cog"></i></a> <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a> </footer>
                         </section>
                     </section>
                 </li>
-                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="assets/images/a0.jpg"> </span> John.Smith <b class="caret"></b> </a>
+                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="<?=config_item('base_url');?>/assets/images/a0.jpg"> </span> John.Smith <b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight">
                         <span class="arrow top"></span>
                         <li> <a href="#">Settings</a> </li>
