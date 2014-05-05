@@ -36,13 +36,19 @@
                             <input type="text" class="form-control" data-trigger="change" data-required="true" data-type="number" placeholder="Например: 10000">
                             
                             <p class="m-t">Статус:</p>                         
-                            <div class="btn-group-vertical">
-                                  <button type="button" class="btn btn-default">Первичный контакт</button>
-                                  <button type="button" class="btn btn-default">Переговоры</button>
-                                  <button type="button" class="btn btn-default">Принимают решение</button>
-                                  <button type="button" class="btn btn-default">Согласование договора</button>
-                                  <button type="button" class="btn btn-default">Успешно реализовано</button>
-                                  <button type="button" class="btn btn-default">Закрыто и нереализовано</button>
+                            <div class="btn-group-vertical" data-toggle="buttons">
+                                  <label class="btn btn-sm btn-default">
+<input type="radio" name="options">Первичный контакт</label>
+                                  <label class="btn btn-sm btn-default">
+<input type="radio" name="options">Переговоры</label>
+                                  <label class="btn btn-sm btn-default">
+<input type="radio" name="options">Принимают решение</label>
+                                  <label class="btn btn-sm btn-default">
+<input type="radio" name="options">Согласование договора</label>
+                                  <label class="btn btn-sm btn-default">
+<input type="radio" name="options">Успешно реализовано</label>
+                                  <label class="btn btn-sm btn-default">
+<input type="radio" name="options">Закрыто и нереализовано</label>
                             </div>
 
                           
