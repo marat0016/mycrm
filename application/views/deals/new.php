@@ -1,5 +1,12 @@
 <?=$this->load->view("theme/head");?>
-    
+
+<link rel="stylesheet" href="<?=config_item('base_url');?>/assets/js/datepicker/datepicker.css" type="text/css" />
+
+<script src="<?=config_item('base_url');?>/assets/js/app.plugin.js"></script>
+<script src="<?=config_item('base_url');?>/assets/js/datepicker/bootstrap-datepicker.js"></script>    
+<script src="<?=config_item('base_url');?>/assets/js/wizard/jquery.bootstrap.wizard.js"></script>
+<script src="<?=config_item('base_url');?>/assets/js/wizard/demo.js"></script>
+
   <section>
     <section class="hbox stretch">
         <?=$this->load->view("theme/left-menu");?>
@@ -118,12 +125,7 @@
         </section>
         <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a> 
         </section>
-        
-<script src="<?=config_item('base_url');?>/assets/js/app.v1.js"></script>
-<script src="<?=config_item('base_url');?>/assets/js/parsley/parsley.min.js"></script>
-<script src="<?=config_item('base_url');?>/assets/js/wizard/jquery.bootstrap.wizard.js"></script>
-<script src="<?=config_item('base_url');?>/assets/js/wizard/demo.js"></script>
-<script src="<?=config_item('base_url');?>/assets/js/app.plugin.js"></script>
+
 
         
 <?=$this->load->view("theme/footer");?>

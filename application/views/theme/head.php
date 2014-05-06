@@ -6,13 +6,14 @@
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="<?=config_item('base_url');?>/assets/css/app.v1.css" type="text/css" />
+    <script src="<?=config_item('base_url');?>/assets/js/app.v1.js"></script>
     <link rel="stylesheet" href="<?=config_item('base_url');?>/assets/js/calendar/bootstrap_calendar.css" type="text/css" />
     <!--[if lt IE 9]> <script src="<?=config_item('base_url');?>/assets/js/ie/html5shiv.js"></script> <script src="<?=config_item('base_url');?>/assets/js/ie/respond.min.js"></script> <script src="<?=config_item('base_url');?>/assets/js/ie/excanvas.js"></script> <![endif]-->
 </head>
 <body class="">
     <section class="vbox">
         <header class="bg-primary header header-md navbar navbar-fixed-top-xs box-shadow">
-            <div class="navbar-header aside-md dk"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav"> <i class="fa fa-bars"></i> </a> <a href="index.html" class="navbar-brand"><img src="<?=config_item('base_url');?>/assets/images/logo.png" class="m-r-sm">Scale</a> <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user"> <i class="fa fa-cog"></i> </a> </div>
+            <div class="navbar-header aside-md dk"> <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav"> <i class="fa fa-bars"></i> </a> <a href="index.html" class="navbar-brand"><img src="<?=config_item('base_url');?>/assets/images/logo.png"></a> <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user"> <i class="fa fa-cog"></i> </a> </div>
             <ul class="nav navbar-nav hidden-xs">
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="i i-grid"></i> </a>
                     <section class="dropdown-menu aside-lg bg-white on animated fadeInLeft">
