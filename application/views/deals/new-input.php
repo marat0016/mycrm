@@ -6,16 +6,47 @@
         input += '<div class="newInputClass">'
         input += '<p class="m-t"><span class="newInputTitle"><a href="#" onclick="editInputTitle(this);">Новое поле</a></span><a class="pull-right" href="#" onclick="removeNewInput(this);">[Х]</a></p>\n';
         if(type == 1){
-            input += '<div><input type="text" class="form-control input-sm"></div>';
+            input += '<input type="text" class="form-control input-sm">';
         }else if(type == 2){
-            input += '<input type="text" class="form-control input-sm" data-required="true" data-type="number">';
+            input += '<input type="text" class="form-control input-sm" data-type="number">';
         }
         else if(type == 3){
             input += '<div class="checkbox i-checks"><label><input type="checkbox" value=""> <i></i></label></div>';
         }
+        else if(type == 4){
+            input += '<div id="variants">'
+            input += '<div><input name="variant" type="text" class="form-control input-sm" placeholder="Вариант №1"></div>'
+            input += '<div class="m-t-xs"><input name="variant" type="text" class="form-control input-sm" placeholder="Вариант №2"></div>';
+            input += '<div id="newList"></div>';
+            input += '<div class="m-t-xs" align="center">\n\
+                        <a href="#" onclick="addNewChildList();">Добавить вариант</a>&nbsp;|&nbsp;\n\
+                        <a href="#" onclick="saveNewChildList();">Сохранить</a>\n\
+                    </div></div>'
+        }
         input += '</div>';
         $("#newInput").before(input);
         //$("[name=addType]:first").attr('checked', true);
+    }
+    
+    function saveNewChildList(){
+        var ed = $("[name=variant]");
+        var html = '<div class="btn-group">';
+        html += '<button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"> <span class="dropdown-label">Выберите...</span> <span class="caret"></span></button>';
+        html += '<ul class="dropdown-menu dropdown-select">';
+        $.each(ed, function(){
+            html += '<li><a href="#"><input type="radio" name="d-s-r">' + $(this).val() + '</a></li>';
+        });
+        html += '</ul>';
+        html += '</div>';
+        $("#variants").html(html);
+    }
+    
+    function addNewChildList(){
+        $("#newList").before("<div class='input-group m-t-xs'><input name='variant' placeholder='' type='text' class='form-control input-sm' /><span class='input-group-addon'><a href='#' onclick='remNewChildList(this);'>Х</a></span></div>");
+    }
+    
+    function remNewChildList(thisis){
+        $(thisis).parents("div.input-group").remove();
     }
     
     function saveInputTitle(thisis){
@@ -24,7 +55,7 @@
     }   
     
     function editInputTitle(thisis){
-        $(thisis).parents("span.newInputTitle").html("<div style='width: 250px' class='input-group'><input value='" + $(thisis).text() + "' placeholder='Введите название поля' type='text' class='form-control input-sm' /><span class='input-group-addon'><a href='#' onclick='saveInputTitle(this);'>Save</a></span></div>")
+        $(thisis).parents("span.newInputTitle").html("<div style='width: 250px;' class='input-group'><input value='" + $(thisis).text() + "' placeholder='Введите название поля' type='text' class='form-control input-sm' /><span class='input-group-addon'><a href='#' onclick='saveInputTitle(this);'>Save</a></span></div>")
     }
 
     function removeNewInput(thisis) { 

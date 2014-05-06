@@ -32,26 +32,28 @@
                             <p>Название сделки:</p>
                             <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" placeholder="Например: создание сайта">                            
                             
-                            <p class="m-t">Выручка:</p>
-                            <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" data-type="number" placeholder="Например: 10000">
-                            
-                            <p class="m-t">Статус:</p>                         
-                            <div class="btn-group-vertical" data-toggle="buttons">
-                                  <label class="btn btn-sm btn-default">
-<input type="radio" name="options">Первичный контакт</label>
-                                  <label class="btn btn-sm btn-default">
-<input type="radio" name="options">Переговоры</label>
-                                  <label class="btn btn-sm btn-default">
-<input type="radio" name="options">Принимают решение</label>
-                                  <label class="btn btn-sm btn-default">
-<input type="radio" name="options">Согласование договора</label>
-                                  <label class="btn btn-sm btn-default">
-<input type="radio" name="options">Успешно реализовано</label>
-                                  <label class="btn btn-sm btn-default">
-<input type="radio" name="options">Закрыто и нереализовано</label>
-                            </div>
+                            <div class="form-group pull-in clearfix">
 
-                          
+                                <div class="col-sm-6">
+                                    <p class="m-t">Выручка:</p>
+                                    <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" data-type="number" placeholder="Например: 10000">
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="m-t">Выберите статус:</p>
+                                    <div class="btn-group m-r">
+                                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"> <span class="dropdown-label">Выберите статус</span> <span class="caret"></span> </button>
+                                      <ul class="dropdown-menu dropdown-select">
+                                        <li><a href="#"><input type="radio" name="status">Первичный контакт</a></li>
+                                        <li><a href="#"><input type="radio" name="status">Переговоры</a></li>
+                                        <li><a href="#"><input type="radio" name="status">Принимают решение</a></li>
+                                        <li><a href="#"><input type="radio" name="status">Согласование договора</a></li>
+                                        <li><a href="#"><input type="radio" name="status">Успешно реализовано</a></li>
+                                        <li><a href="#"><input type="radio" name="status">Закрыто и нереализовано</a></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                            </div>
+       
                             <p class="m-t">Теги:</p>
                             <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" placeholder="Например: Сайт, битрикс">
                         
