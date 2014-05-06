@@ -30,10 +30,10 @@
                       <div class="tab-content">
                         <div class="tab-pane" id="step1">
                             <p>Название сделки:</p>
-                            <input type="text" class="form-control" data-trigger="change" data-required="true" placeholder="Например: создание сайта">                            
+                            <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" placeholder="Например: создание сайта">                            
                             
                             <p class="m-t">Выручка:</p>
-                            <input type="text" class="form-control" data-trigger="change" data-required="true" data-type="number" placeholder="Например: 10000">
+                            <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" data-type="number" placeholder="Например: 10000">
                             
                             <p class="m-t">Статус:</p>                         
                             <div class="btn-group-vertical" data-toggle="buttons">
@@ -52,8 +52,11 @@
                             </div>
 
                           
-                          <p class="m-t">Теги:</p>
-                          <input type="text" class="form-control" data-trigger="change" data-required="true" placeholder="Например: Сайт, битрикс">
+                            <p class="m-t">Теги:</p>
+                            <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" placeholder="Например: Сайт, битрикс">
+                        
+                            <?=$this->load->view("deals/new-input");?>
+                        
                         </div>
                         <div class="tab-pane" id="step2">
                             
