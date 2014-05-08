@@ -1,4 +1,23 @@
 
+<div id="newInput"></div>
+
+<p class="m-t">
+    <div class="btn-group">
+      <button data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle"> <span class="dropdown-label">Добавить поле</span> <span class="caret"></span> </button>
+      <ul class="dropdown-menu dropdown-select">
+        <li class="disabled"><a><input type="radio" name="addType" disabled="true" checked>Добавить поле</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="1">Текст</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="2">Число</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="3">Флаг</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="4">Список</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="5">Мультисписок</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="6">Дата</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="7">Ссылка</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="8">Переключатель</a></li>
+      </ul>
+    </div>
+</p>
+
 <script>
     
     function generateJS(){
@@ -8,8 +27,13 @@
     function addNewInput(thisis){
         var type = $(thisis).find("input").attr("value");
         var input = '';
-        input += '<div class="newInputClass">'
-        input += '<p class="m-t"><span class="newInputTitle"><a href="#" onclick="editInputTitle(this);">Новое поле</a></span><a class="pull-right" href="#" onclick="removeNewInput(this);">[Х]</a></p>\n';
+        input += '<div class="newInputClass m-t">'
+        input += '<p><span class="newInputTitle">\n\
+            <a href="#" onclick="editInputTitle(this);">Новое поле</a></span>\n\
+            <a class="pull-right" href="#" onclick="removeNewInput(this);">[x]</a>&nbsp;\n\
+            <a class="pull-right m-r-xs" href="#" onclick="changePosition(this);" data-type="up"><i class="i i-arrow-up"></i></a>\n\
+            <a class="pull-right m-r-xs" href="#" onclick="changePosition(this);" data-type="down"><i class="i i-arrow-down"></i></a>\n\
+        </p>\n';
         if(type == 1){
             input += '<input type="text" class="form-control input-sm">';
         }else if(type == 2){
@@ -41,10 +65,22 @@
         else if(type == 6){
             input += '<input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="12-02-2013" data-date-format="dd-mm-yyyy" >';
             input += '';
+        }else if(type == 7){
+            input += '<input type="text" class="form-control input-sm" data-type="url">';
         }
         input += '</div>';
-        $("#newInput").before(input);
+        $("#newInput").before($(input).fadeIn());
         generateJS();
+    }
+        
+    function changePosition(thisis){
+        var type = $(thisis).attr("data-type");
+        if(type === "up"){
+            $( $(thisis).parents(".newInputClass") ).insertBefore( $(thisis).parents(".newInputClass").prev(".newInputClass") );
+        }
+        else if(type === "down"){
+            $( $(thisis).parents(".newInputClass") ).insertAfter( $(thisis).parents(".newInputClass").next(".newInputClass") );
+        }
     }
         
     function saveNewChildMultiList(thisis){
@@ -75,7 +111,7 @@
     }
     
     function remNewChildList(thisis){
-        $(thisis).parents("div.input-group").remove();
+        $(thisis).parents("div.input-group").fadeOut();
     }
     
     function saveInputTitle(thisis){
@@ -89,26 +125,6 @@
 
     function removeNewInput(thisis) { 
         if(confirm("Вы уверены что хотите удалить поле?"))
-            $(thisis).parents("div.newInputClass").remove();
+            $(thisis).parents("div.newInputClass").fadeOut();
     }
 </script>
-
-
-<div id="newInput"></div>
-
-<p class="m-t">
-    <div class="btn-group">
-      <button data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle"> <span class="dropdown-label">Добавить поле</span> <span class="caret"></span> </button>
-      <ul class="dropdown-menu dropdown-select">
-        <li class="disabled"><a><input type="radio" name="addType" disabled="true" checked>Добавить поле</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="1">Текст</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="2">Число</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="3">Флаг</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="4">Список</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="5">Мультисписок</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="6">Дата</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="7">Ссылка</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="8">Переключатель</a></li>
-      </ul>
-    </div>
-</p>

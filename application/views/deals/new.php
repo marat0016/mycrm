@@ -29,41 +29,42 @@
                     </div>
                     <div class="panel-body">
                       <p></p>
-                      <div class="line line-lg"></div>
-                      <h4>Процесс заполнения</h4>
-                      <div class="progress progress-xs m-t-md">
-                        <div class="progress-bar bg-success"></div>
-                      </div>
                       <div class="tab-content">
                         <div class="tab-pane" id="step1">
-                            <p>Название сделки:</p>
-                            <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" placeholder="Например: создание сайта">                            
-                            
-                            <div class="form-group pull-in clearfix">
+                            <div class="newInputClass m-t">
+                                <p>Название сделки:</p>
+                                <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" placeholder="Например: создание сайта">                            
+                            </div>
+                            <div class="newInputClass m-t">
+                                <div class="pull-in clearfix">
 
-                                <div class="col-sm-6">
-                                    <p class="m-t">Выручка:</p>
-                                    <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" data-type="number" placeholder="Например: 10000">
-                                </div>
-                                <div class="col-sm-6">
-                                    <p class="m-t">Выберите статус:</p>
-                                    <div class="btn-group m-r">
-                                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"> <span class="dropdown-label">Выберите статус</span> <span class="caret"></span> </button>
-                                      <ul class="dropdown-menu dropdown-select">
-                                        <li><a href="#"><input type="radio" name="status">Первичный контакт</a></li>
-                                        <li><a href="#"><input type="radio" name="status">Переговоры</a></li>
-                                        <li><a href="#"><input type="radio" name="status">Принимают решение</a></li>
-                                        <li><a href="#"><input type="radio" name="status">Согласование договора</a></li>
-                                        <li><a href="#"><input type="radio" name="status">Успешно реализовано</a></li>
-                                        <li><a href="#"><input type="radio" name="status">Закрыто и нереализовано</a></li>
-                                      </ul>
+                                    <div class="col-sm-6">
+                                        <p>Выручка:</p>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" data-type="number" placeholder="Например: 10000">
+                                            <span class="input-group-addon"><i class="fa fa-rouble"></i></span> 
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p>Выберите статус:</p>
+                                        <div class="btn-group">
+                                          <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"> <span class="dropdown-label">Выберите статус</span> <span class="caret"></span> </button>
+                                          <ul class="dropdown-menu dropdown-select">
+                                            <li><a href="#"><input type="radio" name="status">Первичный контакт</a></li>
+                                            <li><a href="#"><input type="radio" name="status">Переговоры</a></li>
+                                            <li><a href="#"><input type="radio" name="status">Принимают решение</a></li>
+                                            <li><a href="#"><input type="radio" name="status">Согласование договора</a></li>
+                                            <li><a href="#"><input type="radio" name="status">Успешно реализовано</a></li>
+                                            <li><a href="#"><input type="radio" name="status">Закрыто и нереализовано</a></li>
+                                          </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-       
-                            <p class="m-t">Теги:</p>
-                            <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" placeholder="Например: Сайт, битрикс">
-                        
+                            <div class="newInputClass m-t">
+                                <p>Теги:</p>
+                                <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" placeholder="Например: Сайт, битрикс">
+                            </div>
                             <?=$this->load->view("deals/new-input");?>
                         
                         </div>
