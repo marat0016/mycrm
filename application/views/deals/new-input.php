@@ -26,8 +26,10 @@
     
     function addNewInput(thisis){
         var type = $(thisis).find("input").attr("value");
+        var id = $(thisis).parents(".btn-group").parent("p").html();
+        alert(id);
         var input = '';
-        input += '<div class="newInputClass m-t">'
+        input += '<div class="newInputClass">'
         input += '<p><span class="newInputTitle">\n\
             <a href="#" onclick="editInputTitle(this);">Новое поле</a></span>\n\
             <a class="pull-right" href="#" onclick="removeNewInput(this);">[x]</a>&nbsp;\n\

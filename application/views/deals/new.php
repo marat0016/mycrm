@@ -3,9 +3,17 @@
 <link rel="stylesheet" href="<?=config_item('base_url');?>/assets/js/datepicker/datepicker.css" type="text/css" />
 
 <script src="<?=config_item('base_url');?>/assets/js/app.plugin.js"></script>
+<script src="<?=config_item('base_url');?>/assets/js/parsley/parsley.min.js"></script>
 <script src="<?=config_item('base_url');?>/assets/js/datepicker/bootstrap-datepicker.js"></script>    
 <script src="<?=config_item('base_url');?>/assets/js/wizard/jquery.bootstrap.wizard.js"></script>
 <script src="<?=config_item('base_url');?>/assets/js/wizard/demo.js"></script>
+
+<style>
+    .newInputClass{
+        border-bottom: 1px dashed #ccc;
+        padding: 10px 0
+    }
+</style>
 
   <section>
     <section class="hbox stretch">
@@ -31,11 +39,11 @@
                       <p></p>
                       <div class="tab-content">
                         <div class="tab-pane" id="step1">
-                            <div class="newInputClass m-t">
+                            <div class="newInputClass">
                                 <p>Название сделки:</p>
                                 <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" placeholder="Например: создание сайта">                            
                             </div>
-                            <div class="newInputClass m-t">
+                            <div class="newInputClass">
                                 <div class="pull-in clearfix">
 
                                     <div class="col-sm-6">
@@ -61,7 +69,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="newInputClass m-t">
+                            <div class="newInputClass">
                                 <p>Теги:</p>
                                 <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" placeholder="Например: Сайт, битрикс">
                             </div>
@@ -70,12 +78,43 @@
                         </div>
                         <div class="tab-pane" id="step2">
                             
-                            <p>Имя Фамилия:</p>
-                            <input type="text" class="form-control" data-trigger="change" data-required="true" placeholder="Иван Иванов">
+                            <div class="newInputClass">
+                                <p>Имя Фамилия:</p>
+                                <input type="text" class="form-control" data-trigger="change" data-required="true" placeholder="Иван Иванов">
+                            </div>
                             
-                            <p class="m-t">Номер телефона:</p>
-                            <input type="text" class="form-control" data-trigger="change" data-required="true" data-type="number" placeholder="79123456789">
-                        
+                            <div class="newInputClass">
+                                <div class="pull-in clearfix">
+                                    <div class="col-sm-6">
+                                        <p>Номер телефона:</p>
+                                        <input type="text" class="form-control" data-trigger="change" data-required="true" data-type="number" placeholder="79123456789">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p>Email:</p>
+                                        <input type="text" class="form-control" data-trigger="change" data-type="mail" placeholder="mail@mail.ru">
+                                    </div>
+                                </div>
+                            </div>
+                            
+<div id="newInputContact"></div>
+
+<p class="m-t">
+    <div class="btn-group">
+      <button data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle"> <span class="dropdown-label">Добавить поле</span> <span class="caret"></span> </button>
+      <ul class="dropdown-menu dropdown-select">
+        <li class="disabled"><a><input type="radio" name="addType" disabled="true" checked>Добавить поле</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="1">Текст</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="2">Число</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="3">Флаг</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="4">Список</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="5">Мультисписок</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="6">Дата</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="7">Ссылка</a></li>
+        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="8">Переключатель</a></li>
+      </ul>
+    </div>
+</p>
+                            
                         </div>
                         <div class="tab-pane" id="step3">This is step 3</div>
                         <ul class="pager wizard m-b-sm">
