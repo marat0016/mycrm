@@ -73,7 +73,7 @@
                                 <p>Теги:</p>
                                 <input type="text" class="form-control input-sm" data-trigger="change" data-required="true" placeholder="Например: Сайт, битрикс">
                             </div>
-                            <?=$this->load->view("deals/new-input");?>
+                            <?=$this->load->view("other/new-field", array("newFieldId" => "newFieldInAddDeal"));?>
                         
                         </div>
                         <div class="tab-pane" id="step2">
@@ -96,24 +96,7 @@
                                 </div>
                             </div>
                             
-<div id="newInputContact"></div>
-
-<p class="m-t">
-    <div class="btn-group">
-      <button data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle"> <span class="dropdown-label">Добавить поле</span> <span class="caret"></span> </button>
-      <ul class="dropdown-menu dropdown-select">
-        <li class="disabled"><a><input type="radio" name="addType" disabled="true" checked>Добавить поле</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="1">Текст</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="2">Число</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="3">Флаг</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="4">Список</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="5">Мультисписок</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="6">Дата</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="7">Ссылка</a></li>
-        <li><a href="#" onclick="addNewInput(this);"><input type="radio" name="addType" value="8">Переключатель</a></li>
-      </ul>
-    </div>
-</p>
+                            <?=$this->load->view("other/new-field", array("newFieldId" => "newFieldInAddContact"));?>
                             
                         </div>
                         <div class="tab-pane" id="step3">This is step 3</div>

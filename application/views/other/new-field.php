@@ -1,8 +1,8 @@
 
-<div id="newInput"></div>
+<div id="<?=$newFieldId;?>"></div>
 
 <p class="m-t">
-    <div class="btn-group">
+    <div class="btn-group" data-name="<?=$newFieldId;?>">
       <button data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle"> <span class="dropdown-label">Добавить поле</span> <span class="caret"></span> </button>
       <ul class="dropdown-menu dropdown-select">
         <li class="disabled"><a><input type="radio" name="addType" disabled="true" checked>Добавить поле</a></li>
@@ -25,9 +25,10 @@
     }
     
     function addNewInput(thisis){
+        //Тип выбранного поля
         var type = $(thisis).find("input").attr("value");
-        var id = $(thisis).parents(".btn-group").parent("p").html();
-        alert(id);
+        //Определяем ID элемента, перед которым вставляем новые поля
+        var id = $(thisis).parents(".btn-group").attr("data-name");
         var input = '';
         input += '<div class="newInputClass">'
         input += '<p><span class="newInputTitle">\n\
@@ -71,7 +72,7 @@
             input += '<input type="text" class="form-control input-sm" data-type="url">';
         }
         input += '</div>';
-        $("#newInput").before($(input).fadeIn());
+        $("#" + id).before($(input).fadeIn());
         generateJS();
     }
         
